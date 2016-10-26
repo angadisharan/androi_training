@@ -50,8 +50,6 @@ public class ActivityWidgetDemo extends AppCompatActivity {
             Log.e("MyFirstApp", "isChecked " + isChecked);
             Log.i("MyFirstApp", "isChecked " + isChecked);
 
-
-
             switch (buttonView.getId()) {
                 case R.id.checkbox_android:
                     Toast.makeText(ActivityWidgetDemo.this, "Android selectState " + isChecked, Toast.LENGTH_SHORT).show();
