@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,6 +21,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.mathrusoft.teacher.fragments.FragmentAttendance;
+import com.mathrusoft.teacher.fragments.FragmentGallery;
+import com.mathrusoft.teacher.fragments.FragmentSettings;
 import com.mathrusoft.teacher.utils.Constants;
 
 public class ActivityMain extends AppCompatActivity
@@ -105,23 +111,54 @@ public class ActivityMain extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        if (id == R.id.nav_gallery) {
+            attachFragment(new FragmentGallery());
 
-        if (id == R.id.nav_camera) {
-            Toast.makeText(mContext, " camera click", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_gallery) {
-            Toast.makeText(mContext, " nav_gallery click", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_slideshow) {
-            Toast.makeText(mContext, " nav_slideshow click", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_manage) {
-            Toast.makeText(mContext, " nav_manage click", Toast.LENGTH_SHORT).show();
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.add(R.id.fragment_holder, new FragmentGallery());
+//            fragmentTransaction.commit();
+
+        } else if (id == R.id.nav_attendance) {
+            attachFragment(new FragmentAttendance());
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.add(R.id.fragment_holder, new FragmentAttendance());
+//            fragmentTransaction.commit();
+
+        } else if (id == R.id.nav_settings) {
+            attachFragment(new FragmentSettings());
+
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.add(R.id.fragment_holder, new FragmentSettings());
+//            fragmentTransaction.commit();
+
         } else if (id == R.id.nav_share) {
             Toast.makeText(mContext, " nav_share click", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_send) {
             Toast.makeText(mContext, " nav_send click", Toast.LENGTH_SHORT).show();
         }
 
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    Fragment mAttachedFragment;
+
+    private void attachFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        if (mAttachedFragment != null) {
+            fragmentTransaction.remove(mAttachedFragment);
+        }
+
+        fragmentTransaction.add(R.id.fragment_holder, fragment);
+        fragmentTransaction.commit();
+
+        mAttachedFragment = fragment;
     }
 }

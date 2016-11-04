@@ -1,8 +1,10 @@
 package com.mathrusoft.teacher;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +12,7 @@ import android.widget.Button;
 /**
  * Created by sharanangadi on 26/10/16.
  */
-public class ActivityA extends Activity {
+public class ActivityA extends AppCompatActivity {
 
     private static final String TAG = "Demo_ActivityA";
 
@@ -31,6 +33,11 @@ public class ActivityA extends Activity {
                 ActivityA.this.startActivity(intent);
             }
         });
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.fragment_holder, new MyFragment());
+        fragmentTransaction.commit();
     }
 
     @Override
