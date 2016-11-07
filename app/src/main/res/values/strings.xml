@@ -9,5 +9,6 @@
     <string name="activity_a_name">Activity A</string>
 
     <string name="logout">Log out</string>
+    <string name="download_completed">Download Completed</string>
 
 </resources>
