@@ -14,16 +14,16 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
-        <activity
-            android:name=".ActivityLogin"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <!--<activity-->
+        <!--android:name=".ActivityLogin"-->
+        <!--android:label="@string/app_name"-->
+        <!--android:theme="@style/AppTheme">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
 
         <!--<activity-->
         <!--android:name=".ActivityWidgetDemo"-->
@@ -60,21 +60,9 @@
         <!--</activity>-->
 
 
-        <!--<activity-->
-            <!--android:name=".ActivityDemoFragment"-->
-            <!--android:label="Activity Fr Demo"-->
-            <!--android:theme="@style/AppTheme">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
-
-
         <activity
-            android:name=".ActivityAsyncTaskDemo"
-            android:label="Async Demo"
+            android:name=".ActivityDemoList"
+            android:label="Activity Fr Demo"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -82,6 +70,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--<activity-->
+        <!--android:name=".ActivityDemoFragment"-->
+        <!--android:label="Activity Fragment Demo"-->
+        <!--android:theme="@style/AppTheme">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
+
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
+
+
+        <!--<activity-->
+        <!--android:name=".ActivityAsyncTaskDemo"-->
+        <!--android:label="Async Demo"-->
+        <!--android:theme="@style/AppTheme">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
+
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
 
     </application>
 

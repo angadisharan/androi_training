@@ -15,8 +15,15 @@
     <!--android:textSize="30sp" />-->
 
     <fragment
+        android:id="@+id/fragment_one"
         class="com.mathrusoft.teacher.fragments.FragmentDemo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!--<fragment-->
+        <!--android:id="@+id/two"-->
+        <!--class="com.mathrusoft.teacher.fragments.FragmentDemo"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
 
 </LinearLayout>
