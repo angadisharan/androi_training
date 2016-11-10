@@ -46,6 +46,7 @@ public class AdapterDemo extends ArrayAdapter<Status> {
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_status, null);
         }
+
         Status status = mStatuses.get(position);
 
         ((TextView) convertView.findViewById(R.id.name)).setText(status.getName());

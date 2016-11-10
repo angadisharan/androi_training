@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.mathrusoft.teacher.fragments.FragmentAttendance;
 import com.mathrusoft.teacher.fragments.FragmentGallery;
+import com.mathrusoft.teacher.fragments.FragmentSaveStudent;
 import com.mathrusoft.teacher.fragments.FragmentSettings;
 import com.mathrusoft.teacher.utils.Constants;
 
@@ -137,6 +138,8 @@ public class ActivityMain extends AppCompatActivity
             Toast.makeText(mContext, " nav_share click", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_send) {
             Toast.makeText(mContext, " nav_send click", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_save_student) {
+            attachFragment(new FragmentSaveStudent());
         }
 
 
