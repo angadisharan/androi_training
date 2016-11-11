@@ -1,5 +1,6 @@
 package com.mathrusoft.teacher.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.mathrusoft.teacher.R;
+import com.mathrusoft.teacher.database.DataSource;
 import com.mathrusoft.teacher.model.Student;
 
 /**
@@ -25,6 +27,14 @@ public class FragmentSaveStudent extends Fragment {
     private EditText mEditTextBranch;
 
     private Button mButton;
+
+    Context mContext;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
+    }
 
     @Nullable
     @Override
@@ -52,11 +62,12 @@ public class FragmentSaveStudent extends Fragment {
                         || TextUtils.isEmpty(mEditTextBranch.getText().toString())) {
 
                     Toast.makeText(getActivity().getApplicationContext(),
-                            "Plese endte valid valures", Toast.LENGTH_SHORT).show();
+                            "Please enter valid input", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 Student student = new Student();
+
                 student.setName(mEditTextName.getText().toString());
                 student.setUsn(mEditTextUSN.getText().toString());
                 student.setBranch(mEditTextBranch.getText().toString());
@@ -72,6 +83,10 @@ public class FragmentSaveStudent extends Fragment {
 
     private void doDBSaveCall(Student student) {
         //Save to DB
+        DataSource dataSource = new DataSource(mContext);
+        long id = dataSource.saveStudent(student);
+        Toast.makeText(mContext,
+                "Sutedent saved id : " + id, Toast.LENGTH_SHORT).show();
     }
 
 }
