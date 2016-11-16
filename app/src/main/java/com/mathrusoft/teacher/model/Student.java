@@ -5,9 +5,36 @@ package com.mathrusoft.teacher.model;
  */
 
 public class Student {
+    private int id;
     private String name;
     private String usn;
     private String branch;
+    private boolean attendance;
+    private String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public boolean isPresent() {
+        return attendance;
+    }
+
+    public void setAttendance(boolean attendance) {
+        this.attendance = attendance;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setName(String name) {
         this.name = name;

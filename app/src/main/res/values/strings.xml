@@ -10,5 +10,6 @@
 
     <string name="logout">Log out</string>
     <string name="download_completed">Download Completed</string>
+    <string name="save_student">Student List</string>
 
 </resources>
