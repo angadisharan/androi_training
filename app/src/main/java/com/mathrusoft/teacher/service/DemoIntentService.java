@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class DemoIntentService extends IntentService {
 
     public DemoIntentService() {
-        super("MyIntentService");
+        super("DemoIntentService");
     }
 
     /**

@@ -27,9 +27,6 @@ public class ActivityA extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "Inside onCreate");
 
-//        Intent intent = new Intent(this, MyIntentService.class);
-//        startService(intent);
-
         setContentView(R.layout.activity_a);
         mButtonLaunchB = (Button) findViewById(R.id.button_launch_activity_b);
 
@@ -47,31 +44,11 @@ public class ActivityA extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    MyService myService;
-
-    ServiceConnection serviceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-
-            Log.d("MYAPP", "Sercice Onnected");
-            MyService.MyBinder myBinder = (MyService.MyBinder) service;
-            myService = myBinder.getService();
-
-            Toast.makeText(ActivityA.this, "Connected", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            myService = null;
-        }
-    };
 
 
     @Override
     protected void onResume() {
         super.onResume();
-        Intent intent = new Intent(this, MyService.class);
-        bindService(intent, serviceConnection, BIND_AUTO_CREATE);
     }
 
 
@@ -90,7 +67,6 @@ public class ActivityA extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        unbindService(serviceConnection);
         Log.i(TAG, "Inside onPause");
     }
 
