@@ -1,8 +1,10 @@
 package com.mathrusoft.teacher;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * Created by sharanangadi on 26/10/16.
@@ -16,6 +18,18 @@ public class ActivityB extends Activity {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "Inside onCreate");
         setContentView(R.layout.activity_b);
+
+
+        Intent intent = getIntent();
+        Toast.makeText(this, intent.getStringExtra("NAME") + " id " + intent.getIntExtra("ID", -11),
+                Toast.LENGTH_SHORT).show();
+
+    }
+
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
     }
 
     @Override
