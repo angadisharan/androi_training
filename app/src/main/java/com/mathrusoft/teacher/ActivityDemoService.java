@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.mathrusoft.teacher.service.DemoIntentService;
+import com.mathrusoft.teacher.service.DemoService;
 
 /**
  * Created by sharanangadi on 17/11/16.
@@ -18,6 +19,13 @@ public class ActivityDemoService extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo_service);
+
+
+//        Intent intent = new Intent(this.getApplicationContext(), DemoService.class);
+//        startService(intent);
+
+
+
 
         Intent intentService = new Intent(this.getApplicationContext(), DemoIntentService.class);
 

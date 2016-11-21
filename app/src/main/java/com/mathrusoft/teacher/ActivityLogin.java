@@ -52,8 +52,9 @@ public class ActivityLogin extends AppCompatActivity {
 
 
         SharedPreferences sharedPreferences = getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE);
+        boolean isLoggedIn = sharedPreferences.getBoolean(Constants.IS_AUTH, false);
 
-        if (sharedPreferences.getBoolean(Constants.IS_AUTH, false)) {
+        if (isLoggedIn) {
             Intent intent = new Intent(ActivityLogin.this, ActivityMain.class);
             startActivity(intent);
             ActivityLogin.this.finish();

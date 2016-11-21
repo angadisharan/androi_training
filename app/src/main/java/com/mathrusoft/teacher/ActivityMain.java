@@ -61,6 +61,12 @@ public class ActivityMain extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        Intent intent = new Intent();
+        intent.setAction("custom_action");
+        sendBroadcast(intent);
+
     }
 
     @Override
@@ -102,6 +108,10 @@ public class ActivityMain extends AppCompatActivity
                 Intent intent = new Intent(mContext, ActivityLogin.class);
                 startActivity(intent);
                 finish();
+                break;
+
+            case R.id.action_profile:
+                Toast.makeText(mContext, "Profile Clicked", Toast.LENGTH_SHORT).show();
                 break;
         }
 
